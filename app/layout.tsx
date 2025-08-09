@@ -17,10 +17,10 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
     <html lang="en">
       <body className={fredoka.className} >
         {children}
+        <footer>
+          <p>Copyright 2025 © - Panca</p>
+        </footer>
       </body>
-      <footer>
-        <p>Copyright 2025 © - Panca</p>
-      </footer>
     </html>
   );
 }

@@ -1,21 +1,12 @@
-import Link from "next/link";
+import Header from "./components/header";
 
 export default function Home() {
   return (
-    <div>
-      <header>
-        <h1>Panca.no</h1>
-        <nav>
-          <ul>
-            <li><Link href="/blog">Blog</Link></li>
-            <li><Link href="/showcase">Showcase</Link></li>
-            <li><Link href="/about">About</Link></li>
-          </ul>
-        </nav>
-      </header>
+    <>
+      <Header/>
       <main>
         Hey
       </main>
-    </div>
+    </>
   );
 }

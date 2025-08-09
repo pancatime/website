@@ -1,9 +1,12 @@
+import Header from "../components/header";
+
 export default function Showcase() {
   return (
-    <div>
+    <>
+      <Header/>
       <main>
         Epic showcase
       </main>
-    </div>
+    </>
   );
 }
