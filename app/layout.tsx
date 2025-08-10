@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Fredoka } from "next/font/google";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 
-const fredoka = Fredoka({
+const nunito = Nunito({
   weight: ["400", "700"],
   subsets: ["latin"],
 });
@@ -12,14 +12,20 @@ export const metadata: Metadata = {
   description: "My website",
 };
 
-export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
+interface Props {
+  children: Readonly<{ children: React.ReactNode; }>,
+}
+
+export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <body className={fredoka.className} >
-        {children}
-        <footer>
-          <p>Copyright 2025 © - Panca</p>
-        </footer>
+      <body className={`${nunito.className} bg-black text-blue-200`}>
+        <div className="grid grid-cols-3 max-w-[800px] m-auto">
+          {children}
+          <footer className="col-start-1 mt-24">
+            <p>Copyright 2025 © Panca</p>
+          </footer>
+        </div>
       </body>
     </html>
   );
