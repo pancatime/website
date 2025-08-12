@@ -11,10 +11,10 @@ export default function Home() {
   return (
     <>
       <header className="col-start-1 col-end-3 mt-32">
-        <h1 className={`${fredoka.className} text-7xl`}>Panca.no</h1>
+        <h1 className={`${fredoka.className} text-7xl`}>Pancatime</h1>
       </header>
       <main className="col-start-1 col-end-3 my-4">
-        <Navigation/>
+        <Navigation isHomePage={true}/>
       </main>
     </>
   );
