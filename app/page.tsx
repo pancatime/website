@@ -1,4 +1,4 @@
-import Navigation from "./components/navigation";
+import Link from "next/link";
 import { Fredoka, Nunito } from "next/font/google";
 
 const fredoka = Fredoka({
@@ -6,6 +6,12 @@ const fredoka = Fredoka({
   subsets: ["latin"],
 });
 
+const links = [
+  { href: "/",          title: "Home" },
+  { href: "/blog",      title: "Blog" },
+  { href: "/showcase",  title: "Showcase" },
+  { href: "/about",     title: "About" },
+];
 
 export default function Home() {
   return (
@@ -14,7 +20,17 @@ export default function Home() {
         <h1 className={`${fredoka.className} text-7xl`}>Pancatime</h1>
       </header>
       <main className="col-start-1 col-end-3 my-4">
-        <Navigation isHomePage={true}/>
+        <nav>
+          <ul className={"*:px-4 *:py-2 text-xl font-bold"}>
+            {links.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="transform transition duration-300 hover:text-white">
+                  { item.title }
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </main>
     </>
   );

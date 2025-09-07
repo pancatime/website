@@ -4,7 +4,10 @@ export default function Blog() {
   return (
     <>
       <header className="col-start-1 col-end-4">
-        <Navigation horizontal={true}/>
+        <Navigation navItems={[
+          { href: "/", title: "⌂ Home" },
+          { href: "/", title: "Blogs" },
+        ]}/>
       </header>
       <main className="col-start-1 sm:col-end-3 col-end-4 p-4">
         <article>

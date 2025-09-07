@@ -1,32 +1,23 @@
 import Link from "next/link";
 
 interface Props {
-  horizontal: bool,
-  isHomePage: bool,
+  navItems: { href: string, title: string }[]
 }
 
-const links = [
-  { href: "/",          title: "Home" },
-  { href: "/blog",      title: "Blog" },
-  { href: "/showcase",  title: "Showcase" },
-  { href: "/about",     title: "About" },
-];
-
-export default function Header({ horizontal, isHomePage }: Props) {
-  return(
+export default function Navigation({ navItems } : Props) {
+  return (
     <nav>
-      <ul className={`${ horizontal ? "flex justify-between " : "" }` +
-                     `*:px-4 *:py-2 text-xl font-bold`}>
-        {links.filter((item) => !(item.title == "Home" && isHomePage))
-              .map((item) => (
-          <li key={item.href}>
-            <Link href={item.href}
-                  className="transform transition duration-300 hover:text-white">
+      <ul className="flex flex-horizontal m-2">
+        {navItems.map((item) => (
+          <li key={item.title}>
+            <Link href={item.href} className="border-2 font-bold rounded-2xl py-2 px-4 m-2
+                                              inline-block relative flex horizontal transform
+                                              transition duration-300 hover:text-white">
               { item.title }
             </Link>
           </li>
         ))}
       </ul>
     </nav>
-  )
+  );
 }
