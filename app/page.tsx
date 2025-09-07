@@ -17,7 +17,9 @@ export default function Home() {
   return (
     <>
       <header className="col-start-1 col-end-3 mt-32">
-        <h1 className={`${fredoka.className} text-7xl`}>Pancatime</h1>
+        <h1 className={`${fredoka.className} text-7xl text-white text-shadow-[-4px_0px_4px_rgb(150_200_255_/_1)]`}>
+          Pancatime
+        </h1>
       </header>
       <main className="col-start-1 col-end-3 my-4">
         <nav>
