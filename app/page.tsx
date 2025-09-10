@@ -15,25 +15,30 @@ const links = [
 
 export default function Home() {
   return (
-    <>
-      <header className="col-start-1 col-end-3 mt-32">
-        <h1 className={`${fredoka.className} text-7xl text-white text-shadow-[-4px_0px_4px_rgb(150_200_255_/_1)]`}>
-          Pancatime
-        </h1>
-      </header>
-      <main className="col-start-1 col-end-3 my-4">
-        <nav>
-          <ul className={"*:px-4 *:py-2 text-xl font-bold"}>
-            {links.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className="transform transition duration-300 hover:text-white">
-                  { item.title }
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </main>
-    </>
+    <div className="grid h-screen content-center">
+      <div className="w-[720px] h-[500px] m-auto">
+        <header>
+          <h1 className={`${fredoka.className} text-7xl text-white text-shadow-[-4px_0px_4px_rgb(150_200_255_/_1)]`}>
+            Pancatime
+          </h1>
+        </header>
+        <main className="my-8">
+          <nav>
+            <ul className={"*:py-2 text-xl font-bold"}>
+              {links.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="transform transition duration-300 hover:text-white">
+                    { item.title }
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </main>
+        <footer className="col-start-1 mt-24">
+          <p>Copyright 2025 © Panca</p>
+        </footer>
+      </div>
+    </div>
   );
 }
