@@ -7,7 +7,6 @@ const fredoka = Fredoka({
 });
 
 const links = [
-  { href: "/",          title: "Home" },
   { href: "/blog",      title: "Blog" },
   { href: "/showcase",  title: "Showcase" },
   { href: "/about",     title: "About" },
@@ -16,7 +15,7 @@ const links = [
 export default function Home() {
   return (
     <div className="grid h-screen content-center">
-      <div className="w-[720px] h-[500px] m-auto">
+      <div className="w-[100%] max-w-[720px] h-[500px] m-auto">
         <header>
           <h1 className={`${fredoka.className} text-7xl text-white text-shadow-[-4px_0px_4px_rgb(150_200_255_/_1)]`}>
             Pancatime
@@ -27,7 +26,7 @@ export default function Home() {
             <ul className={"*:py-2 text-xl font-bold"}>
               {links.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="transform transition duration-300 hover:text-white">
+                  <Link href={item.href} className="transition duration-300 hover:text-white">
                     { item.title }
                   </Link>
                 </li>
