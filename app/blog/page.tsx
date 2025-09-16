@@ -1,33 +1,28 @@
 import Navigation from "@/components/navigation"
 import Blogs from "@/utils/blogs"
-import BlogItem from "@/components/blogitem"
+import Link from "next/link";
 
 export default async function Blog() {
   const blogs = await Blogs.findAll()
 
   return (
-    <>
-      <header className="col-start-1 col-end-4">
-        <Navigation navItems={[
-          { href: "/", title: "⌂ Home" },
-          { href: "/", title: "Blogs" },
-        ]}/>
+    <div className="max-w-[720px] m-auto p-4 box-border">
+      <header className="mt-50 ">
+        <Navigation navItems={[ { href: "/", title: "< Blog" }, ]}/>
       </header>
-      <main className="col-start-1 sm:col-end-3 col-end-4 p-4">
-        <ul className="max-w-[720px] m-auto mt-32">
-          {blogs.map((blog, i) => {
-            return (
-              <li key={i}>
-                <BlogItem
-                  path={"blog/" + blog.slug}
-                  text={blog.title}
-                  date={`${blog.postedAt.getDate()}.${blog.postedAt.getMonth() + 1}.${blog.postedAt.getFullYear()}`}
-                /> 
-              </li>
-            )
-          })}
+      <main className="mt-20">
+        <ul>
+          {blogs.map((blog, i) => (
+            <li key={i}>
+              <Link href={"blog/" + blog.slug}>
+                <p className="text-2xl font-bold my-4 transition duration-300 hover:text-white">
+                  {`${blog.postedAt.getDate()}.${blog.postedAt.getMonth() + 1}.${blog.postedAt.getFullYear()} ${blog.title}`}
+                </p>
+              </Link>
+            </li>
+          ))}
         </ul>
       </main>
-    </>
+    </div>
   );
 }
