@@ -7,7 +7,7 @@ export default async function Blog() {
 
   return (
     <div className="max-w-[720px] m-auto p-4 box-border">
-      <header className="mt-50 ">
+      <header className="mt-80 ">
         <Navigation navItems={[ { href: "/", title: "< Blog" }, ]}/>
       </header>
       <main className="mt-20">
