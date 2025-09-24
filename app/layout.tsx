@@ -20,12 +20,7 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body className={`${nunito.className} bg-black text-blue-200`}>
-        <div className="grid grid-cols-3 max-w-[800px] m-auto">
-          {children}
-          <footer className="col-start-1 mt-24 p-4">
-            <p>Copyright 2025 © Panca</p>
-          </footer>
-        </div>
+        {children}
       </body>
     </html>
   );
