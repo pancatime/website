@@ -19,7 +19,7 @@ interface Props {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <body className={`${nunito.className} bg-black text-blue-200`}>
+      <body className={`${nunito.className} bg-black text-orange-400`}>
         {children}
       </body>
     </html>
