@@ -26,7 +26,7 @@ const links = [
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <body className={`${nunito.className} bg-black text-orange-400`}>
+      <body className={`${nunito.className} bg-black text-orange-400 selection:bg-orange-400 selection:text-black`}>
         <div className="grid grid-cols-[500px_auto]">
           <nav className="h-screen grid place-items-center">
             <ul className={"*:py-2 text-2xl font-bold relative w-fit h-fit"}>
@@ -39,7 +39,7 @@ export default function RootLayout({ children }: Props) {
               ))}
             </ul>
           </nav>
-          <div className="p-4">
+          <div className="p-4 overflow-y-scroll h-screen">
             {children}
           </div>
         </div>

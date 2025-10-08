@@ -19,7 +19,7 @@ export default async function Blog() {
             {blogs.map((blog, i) => (
               <li key={i}>
                 <Link href={"blog/" + blog.slug}>
-                  <p className="text-2xl font-bold transition duration-300 hover:text-white">
+                  <p className="text-2xl font-bold hover:text-black hover:bg-orange-400">
                     {formatter.format(blog.postedAt) + " - " + blog.title}
                   </p>
                 </Link>
